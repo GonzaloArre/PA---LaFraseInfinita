@@ -1,4 +1,4 @@
-from Libro import Libro
+from Biblio.Books.Libro import Libro
 from Biblio.People.Socio import Socio
 from datetime import date
 
