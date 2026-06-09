@@ -1,4 +1,4 @@
-from Biblio.Libros.ejemplar import Ejemplar
+from Biblio.Books.ejemplar import Ejemplar
 
 #Clase Catalogo que gestiona la coleccion de ejemplares de la biblioteca.
 class Catalogo:
@@ -30,7 +30,6 @@ class Catalogo:
 #Metodo para listar todos los ejemplares del catalogo.
     def listar_ejemplares(self):
      if not self.ejemplares:
-        print("El catalogo esta vacio")
-        return    
+        return print("El catalogo esta vacio")   
      for ejemplar in self.ejemplares:
         print(ejemplar)

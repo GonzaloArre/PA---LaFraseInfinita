@@ -7,7 +7,7 @@ from Biblio.Books.estado_disponible import EstadoDisponible
 # Ejemplar es la clase central que representa cada copia física de un libro en la biblioteca.
 class Ejemplar:
     def __init__(self, codigo_barras: str, libro: Libro):
-        self.codigo_barras: codigo_barras
+        self.codigo_barras = codigo_barras
         self.libro: Libro = libro
         # El estado inicial por defecto según el negocio es Disponible
         self._estado: EstadoEjemplar = EstadoDisponible()

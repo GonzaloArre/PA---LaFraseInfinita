@@ -1,4 +1,4 @@
-from Biblio.Gente.Usuario import Usuario
+from Biblio.People.Usuario import Usuario
 
 #Clase login que gestiona la autenticación de los usuarios en el sistema.
 class Login:
