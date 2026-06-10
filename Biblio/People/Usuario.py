@@ -1,4 +1,4 @@
-from Biblio.Gente.Persona import Persona
+from Biblio.People.Persona import Persona
 #Clase Usuario que representa a un usuario del sistema con credenciales de acceso. Hereda de la clase Persona.
 
 class Usuario(Persona):

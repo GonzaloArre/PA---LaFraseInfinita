@@ -25,7 +25,7 @@ def iniciar_sesion(self, username, password):
 #Metodo para cerrar la sesion del usuario activo.
 def cerrar_sesion(self):
    if self.usuario_activo:
-      print(f"Hasta luego, {self.ususario_activo.obtener_nombre_completo()}!")
-      self.ususario_activo = None
+      print(f"Hasta luego, {self.usuario_activo.obtener_nombre_completo()}!")
+      self.usuario_activo = None
    else:
       print("No hay ningun usuario logueado.")
