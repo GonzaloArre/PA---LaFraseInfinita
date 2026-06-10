@@ -1,4 +1,4 @@
-from Biblio.Libros.ejemplar import Ejemplar
+from Biblio.Books.ejemplar import Ejemplar
 
 #Clase Catalogo que gestiona la coleccion de ejemplares de la biblioteca.
 class Catalogo:

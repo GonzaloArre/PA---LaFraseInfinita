@@ -1,4 +1,4 @@
-from Biblio.Gente.Usuario import Usuario
+from Biblio.People.Usuario import Usuario
 
 #Clase login que gestiona la autenticación de los usuarios en el sistema.
 class Login:
@@ -25,7 +25,7 @@ def iniciar_sesion(self, username, password):
 #Metodo para cerrar la sesion del usuario activo.
 def cerrar_sesion(self):
    if self.usuario_activo:
-      print(f"Hasta luego, {self.ususario_activo.obtener_nombre_completo()}!")
-      self.ususario_activo = None
+      print(f"Hasta luego, {self.usuario_activo.obtener_nombre_completo()}!")
+      self.usuario_activo = None
    else:
       print("No hay ningun usuario logueado.")
