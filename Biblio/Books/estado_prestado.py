@@ -1,4 +1,5 @@
 # estado_prestado.py
+from Biblio.Exceptions import Exceptions
 from typing import TYPE_CHECKING
 from Biblio.Books.estado_ejemplar import EstadoEjemplar
 
@@ -7,7 +8,7 @@ if TYPE_CHECKING:
 
 class EstadoPrestado(EstadoEjemplar):
     def prestar(self, ejemplar: "Ejemplar") -> None:
-        print(f"Error: El ejemplar {ejemplar.codigo_barras} ya se encuentra prestado actualmente.")
+        raise Exceptions(310)  # El ejemplar ya tiene un préstamo activo.
 
     def devolver(self, ejemplar: "Ejemplar") -> None:
         from Biblio.Books.estado_disponible import EstadoDisponible

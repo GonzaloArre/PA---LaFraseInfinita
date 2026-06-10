@@ -1,4 +1,5 @@
 from Biblio.Books.ejemplar import Ejemplar
+from Biblio.Exceptions import Exceptions
 
 #Clase Catalogo que gestiona la coleccion de ejemplares de la biblioteca.
 class Catalogo:
@@ -17,19 +18,18 @@ class Catalogo:
             self.ejemplares.remove(ejemplar)
             print(f" Ejemplar '{codigo_barras}' eliminado del catalogo.")
             return
-     print(f"No se encontro ningun ejemplar con codigo {codigo_barras}.")
-    
+     raise Exceptions(210) # Ejemplar no encontrado.
+
 #Metodo para buscar un ejemplar por su codigo de barras.
     def buscar_ejemplar(self, codigo_barras):
      for ejemplar in self.ejemplares:
         if ejemplar.codigo_barras == codigo_barras:
          return ejemplar
-     print(f"No se encontro ningun ejemplar con codigo {codigo_barras}.")
-     return None
+     raise Exceptions(210) # Ejemplar no encontrado.
 
 #Metodo para listar todos los ejemplares del catalogo.
     def listar_ejemplares(self):
      if not self.ejemplares:
-        return print("El catalogo esta vacio")   
+        raise Exceptions(410) # El catalogo esta vacio en estos momentos.   
      for ejemplar in self.ejemplares:
         print(ejemplar)

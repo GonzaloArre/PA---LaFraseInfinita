@@ -1,4 +1,5 @@
 # estado_en_reparacion.py
+from Biblio.Exceptions import Exceptions
 from typing import TYPE_CHECKING
 from Biblio.Books.estado_ejemplar import EstadoEjemplar
 
@@ -7,7 +8,7 @@ if TYPE_CHECKING:
 
 class EstadoEnReparacion(EstadoEjemplar):
     def prestar(self, ejemplar: "Ejemplar") -> None:
-        print(f"Error: El ejemplar {ejemplar.codigo_barras} está en reparación y no se puede prestar.")
+        raise Exceptions(311) # El ejemplar se encuentra en reparación y no puede ser prestado.
 
     def devolver(self, ejemplar: "Ejemplar") -> None:
         from Biblio.Books.estado_disponible import EstadoDisponible
