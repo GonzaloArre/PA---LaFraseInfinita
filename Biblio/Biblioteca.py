@@ -1,6 +1,7 @@
 from Biblio.Catalogo import Catalogo
-from Biblio.login import Login
+from Biblio.Login import Login
 from Biblio.Prestamo import Prestamo
+from Biblio.Exceptions import Exceptions
 
 #Metaclase que registra automaticamente cuando se crea una clase del sistema.
 class MetaBiblioteca(type):
@@ -12,8 +13,7 @@ class MetaBiblioteca(type):
 def requiere_login(funcion):
         def verificar(self,*args, **kwargs):
             if self.login.usuario_actual is None:
-                print("Debes iniciar sesión para realizar esta acción.")
-                return
+                raise Exceptions(112) #Lanza una excepcion si no hay un usuario logueado
             return funcion(self, *args, **kwargs)
         return verificar
 
