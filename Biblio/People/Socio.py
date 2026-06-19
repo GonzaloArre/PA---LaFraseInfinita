@@ -1,4 +1,4 @@
-from Persona import Persona
+from Biblio.People.Persona import Persona
 
 # Clase Socio hijo de Persona
 class Socio(Persona):
