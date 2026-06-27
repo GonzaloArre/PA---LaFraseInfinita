@@ -1,29 +1,46 @@
-from Biblio.Books.Libro import Libro
-from Biblio.People.Socio import Socio
 from datetime import date
+from Biblio.Books.ejemplar import Ejemplar
+from Biblio.People.Socio import Socio
 
-# Clase Prestamo que representa el préstamo de un Libro a un Socio y el registro de fechas de préstamo y devolución.
+
+# Clase Prestamo que representa el préstamo de un Ejemplar a un Socio y el registro de fechas de préstamo y devolución.
 class Prestamo:
-    def __init__(self, libro: Libro, socio: Socio):
-        self.libro = libro
+    def __init__(self, ejemplar: Ejemplar, socio: Socio):
+        self.ejemplar = ejemplar
         self.socio = socio
         self.fecha_prestamo = date.today()
         self.fecha_devolucion = None
         self.activo = True
 
-    # Método str de Prestamo.
+# Método para mostrar la información del préstamo.
     def __str__(self):
-        devolucion = self.fecha_devolucion or "Pendiente"
-        return (f"Préstamo: {self.libro.title} → {self.socio.name} | "
-                f"Desde: {self.fecha_prestamo} | Devolución: {devolucion}")
 
-    # Método para registrar la devolución del libro, marcando el préstamo como inactivo y registrando la fecha de devolución.
+        devolucion = (
+            self.fecha_devolucion
+            if self.fecha_devolucion
+            else "Pendiente"
+        )
+
+        return (
+            f"Préstamo:\n"
+            f"  Libro: {self.ejemplar.libro.title}\n"
+            f"  Código: {self.ejemplar.codigo_barras}\n"
+            f"  Socio: {self.socio.get_nombre_completo()}\n"
+            f"  Fecha préstamo: {self.fecha_prestamo}\n"
+            f"  Fecha devolución: {devolucion}\n"
+            f"  Estado: {'Activo' if self.activo else 'Finalizado'}"
+        )
+
+    # Método para registrar la devolución del libro
     def registrar_devolucion(self):
         if not self.activo:
             raise Exception("Este préstamo ya fue cerrado")
+            
         self.fecha_devolucion = date.today()
         self.activo = False
-        self.libro.devolver()  # avisa al libro que quedó libre
+
+        # El ejemplar vuelve a estar disponible.
+        self.ejemplar.devolver()
 
     # Método para verificar si el préstamo está activo.
     def esta_activo(self):
