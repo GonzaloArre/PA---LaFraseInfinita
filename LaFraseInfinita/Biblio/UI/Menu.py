@@ -1,6 +1,6 @@
 from Biblio.UI.Presentacion import PresentacionBiblioteca
 from Biblio.Exceptions import Exceptions
-from Biblio.Books.ejemplar import Ejemplar
+from Biblio.Books.Ejemplar import Ejemplar
 from Biblio.Books.Libro import Libro
 from Biblio.People.Socio import Socio
 
