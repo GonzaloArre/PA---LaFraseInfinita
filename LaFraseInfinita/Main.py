@@ -1,6 +1,6 @@
-from Biblio.Biblioteca import Biblioteca
-from Biblio.UI.Presentacion import PresentacionBiblioteca
-from Biblio.UI.Menu import Menu
+from .Biblio.Biblioteca import Biblioteca
+from .Biblio.UI.Presentacion import PresentacionBiblioteca
+from .Biblio.UI.Menu import Menu
 
 def main():
 

@@ -1,0 +1,14 @@
+[
+    {
+        "codigo_barras": "1983751",
+        "libro": {
+            "title": "jurassic park",
+            "isbn": "9786073166041",
+            "anio_pub": "1990",
+            "pag": "400",
+            "autor": [
+                "Michael Crichton"
+            ]
+        }
+    }
+]

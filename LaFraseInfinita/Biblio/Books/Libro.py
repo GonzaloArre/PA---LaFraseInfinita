@@ -8,3 +8,6 @@ class Libro:
     
     def agregar_autor(self, autor):
         self.autor.append(autor)
+
+    def nombre_libro(self):
+        return f"{self.title} de {', '.join(self.autor)}"

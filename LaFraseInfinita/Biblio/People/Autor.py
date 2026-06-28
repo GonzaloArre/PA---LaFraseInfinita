@@ -1,4 +1,5 @@
-from Biblio.People.Persona import Persona
+# Autor hereda de Persona, agregando atributos específicos como seudónimo y nacionalidad.
+from .Persona import Persona
 # Autor hereda de Persona, agregando atributos específicos como seudónimo y nacionalidad.
 class Autor(Persona):
     def __init__(self, nombre, apellido, fec_nac, seudonimo, nacionalidad):

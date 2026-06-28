@@ -1,7 +1,7 @@
-from Biblio.Catalogo import Catalogo
-from Biblio.Login import Login
-from Biblio.Prestamo import Prestamo
-from Biblio.Exceptions import Exceptions
+from .Catalogo import Catalogo
+from .People.Socio import Socio
+from .Prestamo import Prestamo
+from .Exceptions import Exceptions
 
 #Metaclase que registra automaticamente cuando se crea una clase del sistema.
 class MetaBiblioteca(type):
@@ -21,7 +21,6 @@ class Biblioteca(metaclass=MetaBiblioteca):
     def __init__(self,nombre):
         self.nombre = nombre
         self.catalogo = Catalogo() # Composicion: Biblioteca tiene un Catalogo
-        self.login = Login() # Composicion: Biblioteca tiene un Login
         self.prestamo = [] #Lista de prestamos registrados
 
 #Metodo para agregar un ejemplar al sistema
@@ -36,17 +35,17 @@ class Biblioteca(metaclass=MetaBiblioteca):
     def listar_ejemplares(self):
         self.catalogo.listar_ejemplares()
 
-#Metodo para registrar un nuevo usuario
-    def registrar_usuario(self,usuario):
-        self.login.registrar_usuario(usuario)
-
-#Metodo para iniciar sesion
-    def iniciar_sesion(self, username, password):
-        return self.login.iniciar_sesion(username, password)
+    def registrar_socio(self, socio):
+        Socio.agregar_socio(socio)
     
-#Metodo para cerrar sesion
-    def cerrar_sesion(self):
-        self.login.cerrar_sesion()
+    def buscar_socio(self, dni):
+        return Socio.buscar(dni)
+
+    def eliminar_socio(self, dni):
+        Socio.eliminar_socio(dni)
+
+    def listar_socios(self):
+        Socio.listar_socios()
 
 #Metodo para registrar un prestamo
     @requiere_login
@@ -69,4 +68,3 @@ class Biblioteca(metaclass=MetaBiblioteca):
             return
         for prestamo in activos:
             print(prestamo)
-    

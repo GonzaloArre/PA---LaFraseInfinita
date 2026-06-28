@@ -9,6 +9,10 @@ class Persona(ABC):
     @abstractmethod
     def agregar(self):
         pass
+
+    @abstractmethod
+    def eliminar(self):
+        pass
     
     # Método para obtener el nombre completo de la persona.
     def get_nombre_completo(self):

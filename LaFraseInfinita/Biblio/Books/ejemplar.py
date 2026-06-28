@@ -1,7 +1,7 @@
 # ejemplar.py
-from Biblio.Books.Libro import Libro
-from Biblio.Books.estado_ejemplar import EstadoEjemplar
-from Biblio.Books.estado_disponible import EstadoDisponible
+from .Libro import Libro
+from .estado_ejemplar import EstadoEjemplar
+from .estado_disponible import EstadoDisponible
 
 # Para evitar importaciones circulares, se utilizan importaciones locales dentro de los métodos
 # Ejemplar es la clase central que representa cada copia física de un libro en la biblioteca.
@@ -29,4 +29,4 @@ class Ejemplar:
         self._estado.devolver(self)
 
     def descripcion_recurso(self) -> str:
-        return f"Ejemplar [{self.codigo_barras}] - {self.libro} - Estado: {self._estado.obtener_nombre()}"
+        return f"Ejemplar [{self.codigo_barras}] - {self.libro.nombre_libro()} - Estado: {self._estado.obtener_nombre()}"

@@ -1,6 +1,6 @@
 from datetime import date
-from Biblio.Books.ejemplar import Ejemplar
-from Biblio.People.Socio import Socio
+from .Books.ejemplar import Ejemplar
+from .People.Socio import Socio
 
 
 # Clase Prestamo que representa el préstamo de un Ejemplar a un Socio y el registro de fechas de préstamo y devolución.

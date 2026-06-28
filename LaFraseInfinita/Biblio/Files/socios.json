@@ -1,0 +1,11 @@
+[
+    {
+        "nombre": "Matias",
+        "apellido": "Gomez",
+        "fec_nac": "24022000",
+        "tel": "1129845719",
+        "mail": "matiasgomez43@gmail.com",
+        "dni": "40231941",
+        "direccion": "Burzaco"
+    }
+]

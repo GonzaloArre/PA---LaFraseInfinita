@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from Biblio.Books.ejemplar import Ejemplar
+    from .ejemplar import Ejemplar
 
 class EstadoEjemplar(ABC):
     
