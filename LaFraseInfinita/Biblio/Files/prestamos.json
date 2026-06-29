@@ -1,0 +1,30 @@
+[
+    {
+        "codigo_barras": "1983751",
+        "socio_dni": "40231941",
+        "fecha_prestamo": "2026-06-28",
+        "fecha_devolucion": "2026-06-28",
+        "activo": false
+    },
+    {
+        "codigo_barras": "1983751",
+        "socio_dni": "48312939",
+        "fecha_prestamo": "2026-06-28",
+        "fecha_devolucion": "2026-06-28",
+        "activo": false
+    },
+    {
+        "codigo_barras": "1983751",
+        "socio_dni": "40231941",
+        "fecha_prestamo": "2026-06-28",
+        "fecha_devolucion": "2026-06-30",
+        "activo": true
+    },
+    {
+        "codigo_barras": "12409371",
+        "socio_dni": "40231941",
+        "fecha_prestamo": "2026-06-28",
+        "fecha_devolucion": "2026-06-30",
+        "activo": true
+    }
+]

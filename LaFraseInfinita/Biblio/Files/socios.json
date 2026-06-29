@@ -7,5 +7,14 @@
         "mail": "matiasgomez43@gmail.com",
         "dni": "40231941",
         "direccion": "Burzaco"
+    },
+    {
+        "nombre": "Joaquin",
+        "apellido": "Perez",
+        "fec_nac": "26072005",
+        "tel": "1143928537",
+        "mail": "joaquinlector@gmail.com",
+        "dni": "48312939",
+        "direccion": "manzanares 1967"
     }
 ]

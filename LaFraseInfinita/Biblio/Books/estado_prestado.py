@@ -7,6 +7,8 @@ if TYPE_CHECKING:
     from .ejemplar import Ejemplar
 
 class EstadoPrestado(EstadoEjemplar):
+    estado = "Prestado"
+
     def prestar(self, ejemplar: "Ejemplar") -> None:
         raise Exceptions(310)  # El ejemplar ya tiene un préstamo activo.
 
@@ -14,6 +16,3 @@ class EstadoPrestado(EstadoEjemplar):
         from .estado_disponible import EstadoDisponible
         print(f"Éxito: El ejemplar {ejemplar.codigo_barras} fue devuelto con éxito.")
         ejemplar.estado = EstadoDisponible()  # Transición de estado
-
-    def obtener_nombre(self) -> str:
-        return "Prestado"

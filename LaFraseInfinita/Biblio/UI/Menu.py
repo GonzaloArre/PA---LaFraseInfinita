@@ -189,12 +189,13 @@ class Menu:
 
                 codigo = input("Código de ejemplar: ")
                 dni = input("DNI del socio: ")
+                fec_devo = input("fecha de devolución(y/m/d): ")
 
                 try:
                     ejemplar = self.biblioteca.buscar_ejemplar(codigo)
                     socio = self.biblioteca.buscar_socio(dni)
 
-                    self.biblioteca.registrar_prestamo(ejemplar, socio)
+                    self.biblioteca.registrar_prestamo(ejemplar, socio, fec_devo)
 
                 except Exception as e:
                     print(e)
@@ -205,8 +206,9 @@ class Menu:
             elif opcion == "3":
                 self.limpiar()
                 codigo = input("Código del ejemplar: ")
+                self.limpiar()
 
-                prestamo = self.biblioteca.buscar_prestamo_por_codigo(codigo)
+                prestamo = self.biblioteca.buscar_prestamo(codigo)
 
                 if prestamo is None:
                     print("No se encontró un préstamo activo con ese código.")

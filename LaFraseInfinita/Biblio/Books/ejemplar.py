@@ -28,5 +28,5 @@ class Ejemplar:
         # Delega el comportamiento al estado actual
         self._estado.devolver(self)
 
-    def descripcion_recurso(self) -> str:
+    def descripcion(self) -> str:
         return f"Ejemplar [{self.codigo_barras}] - {self.libro.nombre_libro()} - Estado: {self._estado.obtener_nombre()}"

@@ -85,4 +85,4 @@ class Catalogo:
      if not self.ejemplares:
         raise Exceptions(410) # El catalogo esta vacio en estos momentos.   
      for ejemplar in self.ejemplares:
-        print(ejemplar.descripcion_recurso())
+        print(ejemplar.descripcion())

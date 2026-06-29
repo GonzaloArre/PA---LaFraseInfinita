@@ -6,6 +6,8 @@ if TYPE_CHECKING:
     from .ejemplar import Ejemplar
 
 class EstadoDisponible(EstadoEjemplar):
+    estado = "Disponible"
+
     def prestar(self, ejemplar: "Ejemplar") -> None:
         from .estado_prestado import EstadoPrestado
         print(f"Éxito: El ejemplar {ejemplar.codigo_barras} ha sido prestado.")
@@ -13,6 +15,3 @@ class EstadoDisponible(EstadoEjemplar):
 
     def devolver(self, ejemplar: "Ejemplar") -> None:
         print(f"Info: El ejemplar {ejemplar.codigo_barras} ya estaba disponible en estantería.")
-
-    def obtener_nombre(self) -> str:
-        return "Disponible"

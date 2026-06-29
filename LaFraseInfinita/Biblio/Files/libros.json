@@ -10,5 +10,29 @@
                 "Michael Crichton"
             ]
         }
+    },
+    {
+        "codigo_barras": "ABC-1",
+        "libro": {
+            "title": "Dune",
+            "isbn": "123",
+            "anio_pub": "1965",
+            "pag": "412",
+            "autor": [
+                "Frank Herbert"
+            ]
+        }
+    },
+    {
+        "codigo_barras": "12409371",
+        "libro": {
+            "title": "Mistborn",
+            "isbn": "9788417347291",
+            "anio_pub": "2006",
+            "pag": "681",
+            "autor": [
+                "Brandon Sanderson"
+            ]
+        }
     }
 ]
