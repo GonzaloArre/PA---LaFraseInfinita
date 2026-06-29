@@ -10,3 +10,5 @@ INTEGRANTES:
 
 COMANDO DE EJECUCIÓN DE LA APLICACIÓN
 python -m LaFraseInfinita.Main
+
+Link del diagrama UML: https://drive.google.com/file/d/1gkEaNsiBQTOESntdYAo0vrduZGMv_qtl/view?usp=drive_link
