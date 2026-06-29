@@ -1,10 +1,27 @@
 import json
 import os
+from functools import wraps
 from .Persona import Persona
 from ..Exceptions import Exceptions
 
 # Ruta única para el archivo de socios dentro del paquete Biblio
 DB_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "Files", "socios.json"))
+
+
+def validar_datos_socio(func):
+    """Decorador propio que valida datos básicos antes de ejecutar una operación sobre un socio."""
+    @wraps(func)
+    def envoltorio(self, *args, **kwargs):
+        nombre = args[0] if args else kwargs.get("nombre")
+        apellido = args[1] if len(args) > 1 else kwargs.get("apellido")
+        dni = args[5] if len(args) > 5 else kwargs.get("dni")
+
+        if not nombre or not apellido or not dni:
+            raise ValueError("Nombre, apellido y DNI son obligatorios.")
+        return func(self, *args, **kwargs)
+
+    return envoltorio
+
 
 # Clase Socio hijo de Persona
 class Socio(Persona):
@@ -107,6 +124,7 @@ class Socio(Persona):
         return None
 
     # Método para modificar los atributos del socio.
+    @validar_datos_socio
     def modificar(self, nombre=None, apellido=None, fec_nac=None, tel=None, mail=None, direccion=None, dni=None):
         dni_original = self.dni
 
