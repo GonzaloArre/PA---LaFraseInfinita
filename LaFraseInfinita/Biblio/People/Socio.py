@@ -107,19 +107,61 @@ class Socio(Persona):
         return None
 
     # Método para modificar los atributos del socio.
-    def modificar(self, nombre=None, apellido=None, fec_nac=None, tel=None, mail=None, direccion=None):
-        if nombre:
+    def modificar(self, nombre=None, apellido=None, fec_nac=None, tel=None, mail=None, direccion=None, dni=None):
+        dni_original = self.dni
+
+        if nombre is not None:
             self.nombre = nombre
-        if apellido:
+        if apellido is not None:
             self.apellido = apellido
-        if fec_nac:
+        if fec_nac is not None:
             self.fec_nac = fec_nac
-        if tel:
+        if tel is not None:
             self.tel = tel
-        if mail:
+        if mail is not None:
             self.mail = mail
-        if direccion:
+        if direccion is not None:
             self.direccion = direccion
+        if dni is not None:
+            self.dni = dni
+
+        if not os.path.exists(DB_PATH):
+            with open(DB_PATH, "w", encoding="utf-8") as archivo:
+                json.dump([], archivo, ensure_ascii=False, indent=4)
+
+        with open(DB_PATH, "r", encoding="utf-8") as archivo:
+            try:
+                socios = json.load(archivo)
+            except json.JSONDecodeError:
+                socios = []
+
+        actualizado = False
+        for socio in socios:
+            if socio.get("dni") == dni_original:
+                socio["nombre"] = self.nombre
+                socio["apellido"] = self.apellido
+                socio["fec_nac"] = self.fec_nac
+                socio["tel"] = self.tel
+                socio["mail"] = self.mail
+                socio["dni"] = self.dni
+                socio["direccion"] = self.direccion
+                actualizado = True
+                break
+
+        if not actualizado:
+            socios.append({
+                "nombre": self.nombre,
+                "apellido": self.apellido,
+                "fec_nac": self.fec_nac,
+                "tel": self.tel,
+                "mail": self.mail,
+                "dni": self.dni,
+                "direccion": self.direccion,
+            })
+
+        with open(DB_PATH, "w", encoding="utf-8") as archivo:
+            json.dump(socios, archivo, indent=4, ensure_ascii=False)
+
         print(f"Socio modificado: {self.get_nombre_completo()}, {self.fec_nac}, {self.tel}, {self.mail}, {self.direccion}")
 
     # Método str de Socio.

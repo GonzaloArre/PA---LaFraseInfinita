@@ -1,7 +1,7 @@
 import os
 from .Presentacion import PresentacionBiblioteca
 from ..Exceptions import Exceptions
-from ..Books.Ejemplar import Ejemplar
+from ..Books.ejemplar import Ejemplar
 from ..Books.Libro import Libro
 from ..People.Socio import Socio
 
@@ -146,7 +146,7 @@ class Menu:
                     direccion = input(f"Dirección ({socio.direccion}): ") or socio.direccion
 
                     self.limpiar()
-                    socio.modificar(nombre, apellido, fec_nac, tel, mail, direccion)
+                    socio.modificar(nombre, apellido, fec_nac, tel, mail, direccion, dni)
                 except Exceptions as e:
                     print(e)
                     continue

@@ -24,7 +24,14 @@
         "codigo_barras": "12409371",
         "socio_dni": "40231941",
         "fecha_prestamo": "2026-06-28",
-        "fecha_devolucion": "2026-06-30",
+        "fecha_devolucion": "2026-06-29",
+        "activo": false
+    },
+    {
+        "codigo_barras": "DNOTE-0001",
+        "socio_dni": "4000000",
+        "fecha_prestamo": "2026-06-29",
+        "fecha_devolucion": "2026-07-01",
         "activo": true
     }
 ]

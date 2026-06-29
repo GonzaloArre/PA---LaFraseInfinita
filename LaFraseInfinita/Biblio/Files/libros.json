@@ -34,5 +34,18 @@
                 "Brandon Sanderson"
             ]
         }
+    },
+    {
+        "codigo_barras": "DNOTE-0001",
+        "libro": {
+            "title": "Death Note",
+            "isbn": "9788467917031",
+            "anio_pub": "01122003",
+            "pag": "200",
+            "autor": [
+                "Tsugumi Ohba",
+                "Takeshi Obata"
+            ]
+        }
     }
 ]

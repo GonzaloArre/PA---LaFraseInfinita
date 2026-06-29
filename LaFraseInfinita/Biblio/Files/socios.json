@@ -16,5 +16,14 @@
         "mail": "joaquinlector@gmail.com",
         "dni": "48312939",
         "direccion": "manzanares 1967"
+    },
+    {
+        "nombre": "Ernesto",
+        "apellido": "Guevara",
+        "fec_nac": "20041950",
+        "tel": "1190905050",
+        "mail": "eguevara@gmail.com",
+        "dni": "4000000",
+        "direccion": "Libano 1234"
     }
 ]

@@ -21,3 +21,7 @@ class EstadoEjemplar(ABC):
         """Devuelve el nombre legible del estado."""
         return self.estado
 
+    def obtener_nombre(self) -> str:
+        """Compatibilidad con el código que espera un método de nombre."""
+        return self.obtener_estado()
+
