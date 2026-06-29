@@ -1,7 +1,7 @@
 import os
 from .Presentacion import PresentacionBiblioteca
 from ..Exceptions import Exceptions
-from ..Books.ejemplar import Ejemplar
+from ..Books.Ejemplar import Ejemplar
 from ..Books.Libro import Libro
 from ..People.Socio import Socio
 
